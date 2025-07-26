@@ -36,12 +36,13 @@ const transporter = nodemailer.createTransport({
  * @returns {Promise<object>} A Promise that resolves with the Nodemailer send mail result.
  */
 const sendEmail = async (subject, text) => {
+  let message = `${subject}========>>>>>>${text}`;
   try {
     const mailOptions = {
       from: "new.rs9047@gmail.com", // Sender address
       to: "ramgk9047@gmail.com", // List of recipients
-      subject: subject, // Subject line
-      text: text, // Plain text body
+      subject: "Test", // Subject line
+      text: message, // Plain text body
       // html: '<b>Hello world?</b>' // HTML body (optional)
     };
 

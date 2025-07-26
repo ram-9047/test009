@@ -7,17 +7,17 @@ const { sendEmail } = require("../services/email.js");
  * @param {object} res - Express response object.
  */
 const sendEmailController = async (req, res) => {
-  const { subject, message } = req.body;
+  const { sender, message } = req.body;
 
   // Basic validation
-  if (!subject || !message) {
-    return res
-      .status(400)
-      .json({ message: "Missing required fields: subject, or message." });
-  }
+  // if (!sender || !message) {
+  //   return res
+  //     .status(400)
+  //     .json({ message: "Missing required fields: subject, or message." });
+  // }
 
   try {
-    await sendEmail(subject, message);
+    await sendEmail(sender, message);
     res.status(200).json({ message: "success" });
   } catch (error) {
     console.error("Error in sendEmailController:", error);
