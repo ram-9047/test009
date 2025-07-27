@@ -7,7 +7,7 @@ const { sendEmail } = require("../services/email.js");
  * @param {object} res - Express response object.
  */
 const sendEmailController = async (req, res) => {
-  const { sender, message } = req.body;
+  const { sender, body } = req.body;
 
   // Basic validation
   // if (!sender || !message) {
@@ -17,7 +17,7 @@ const sendEmailController = async (req, res) => {
   // }
 
   try {
-    await sendEmail(sender, message);
+    await sendEmail(sender, body);
     res.status(200).json({ message: "success" });
   } catch (error) {
     console.error("Error in sendEmailController:", error);
