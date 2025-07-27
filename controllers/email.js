@@ -7,7 +7,13 @@ const { sendEmail } = require("../services/email.js");
  * @param {object} res - Express response object.
  */
 const sendEmailController = async (req, res) => {
-  const { sender, body } = req.body;
+  // const { sender, body } = req.body;
+  console.log(req.body, "this is the body from client");
+
+  let sender = req.body.sender;
+  let body = req.body.body;
+
+  console.log(sender, body,"chek")
 
   // Basic validation
   // if (!sender || !message) {
