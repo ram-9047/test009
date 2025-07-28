@@ -8,7 +8,7 @@ const { sendEmail } = require("../services/email.js");
  */
 const sendEmailController = async (req, res) => {
   const { sender, body } = req.body;
-  // console.log(req.body, "this is the body from client");
+  console.log("sending email");
 
   // Basic validation
   // if (!sender || !message) {

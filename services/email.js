@@ -18,7 +18,6 @@ const EMAIL_SERVICE = process.env.EMAIL_SERVICE || "gmail"; // Default to gmail 
 //   // When using 'service', nodemailer automatically sets the correct host, port, and secure settings
 // });
 
-console.log(EMAIL_PASS, EMAIL_SERVICE, EMAIL_USER);
 const transporter = nodemailer.createTransport({
   service: EMAIL_SERVICE, // e.g., 'gmail', 'outlook', 'hotmail'
   auth: {
